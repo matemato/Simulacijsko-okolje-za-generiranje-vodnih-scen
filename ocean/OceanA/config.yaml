@@ -165,7 +165,7 @@
     {
       "module": "manipulators.WorldManipulator",
       "config": {
-        "cf_set_world_category_id": 0  # this sets the worlds background category id to 0
+        "cf_set_world_category_id": 0
       }
     },
     {
