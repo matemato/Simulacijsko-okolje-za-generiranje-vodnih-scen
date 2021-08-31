@@ -13,13 +13,13 @@ Ves projekt je bil narejen z naslednjimi zahtevami:
 
 Za uporabo simulacijskega okolja je potrebno narediti naslednje stvari.
 
-### 1. Blender pot
+### I) Blender pot
 
 V config.yaml datoteki, ki se nahaja pod *ocean/OceanA* ali *ocean/OceanB* je potrebno dodati pot do programa Blender.
 
 ![image](https://user-images.githubusercontent.com/47794629/131579565-396031da-42cd-4df1-a6a2-f80b3c5a4656.png)
     
-### 2. Izrezane ovire
+###  II) Izrezane ovire
 Primeri slik iz COCO zbirke so pod *images/*, če pa želite dostopati do celotne zbirke pa je potrebno naložiti 
 - COCO train http://images.cocodataset.org/zips/train2017.zip (18GB) ali
 - COCO val http://images.cocodataset.org/zips/val2017.zip (1GB)
@@ -33,7 +33,7 @@ Primer ukaza:
  ```
  python get_segmented_pics.py --object_type boat --annotation_type lvis_v1_train
  ```
-### 3. Haven nebo
+### III) Haven nebo
 V mapi *resources/Haven/hdris* je primer Haven .hdr datoteke neba. Če želimo pridobiti več Haven datotek uporabimo skripto **download_haven.py** v mapi */scripts*
 
 Primer uporabe:
@@ -41,7 +41,7 @@ Primer uporabe:
 ```
 python download_haven.py --types hdris --categories skies --resolution 4k
 ```
-### 4. Postopek generiranja
+### IV) Postopek generiranja
 Generiranje oceana lahko poženemo na dva načina:
     
 a) S skripto *run.py*
@@ -70,7 +70,7 @@ b) S skripto *run_multiple_times.py*
  ```
  python run_multiple_times.py 
  ```
-### 5. Razne skripte
+### V) Razne skripte
 Ko imamo generirano zbirko s skripto **move_outputs_to_images.py** premaknemo vse outpute v isti folder in sicer v *images/*. Ko imamo slike v *images/* lahko naredimo prenos barv s skripto **transferColors.m**, spremenimo segmentacijske slike, da so pripravljene za treniranje mreže WaSR s skripto **seg_to_my_seg.py**. Za treniranje potrebujemo tudi train.txt datoteko z vsebino zbirke, ki jo lahko naredimo z skripto **create_train_text.py**.
 
 ## 3. Primeri generiranih slik:
