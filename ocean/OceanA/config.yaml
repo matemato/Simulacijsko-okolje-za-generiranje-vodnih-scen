@@ -1,0 +1,204 @@
+# Args: <cam_file> <blend_file> <output_dir> <haven_dir> <boat_dir> <mountain_dir> <buoy_dir>
+{
+  "version": 3,
+  "setup": {
+    # "blender_install_path": "/home_local/<env:USER>/blender/"
+    "blender_install_path": "D:/Program Files/Blender"
+  },
+  "modules": [
+    {
+      "module": "main.Initializer",
+      "config":{
+        "global": {
+          "output_dir": "<args:2>"
+        }
+      }
+    },
+    {
+      "module": "loader.BlendLoader",
+      "config": {
+        "path": "<args:1>"
+      }
+    },
+    {
+      "module": "loader.HavenEnvironmentLoader",
+      "config": {
+        "data_path": "<args:3>"
+      }
+    },
+    {
+      "module": "camera.CameraLoader",
+      "config": {
+        "path": "<args:0>",
+        "file_format": "location rotation/value",
+        "intrinsics": {
+          "fov": 1.248,
+          "clip_end": 200000
+        }
+      }
+    },    
+    {
+      "module": "customModules.BoatRandomizer",
+      "config": {
+        "boats": 25,
+        "boats_close": {
+          "provider": "sampler.Value",
+          "type": "int",
+          "min": 1,
+          "max": 5
+        },
+        "path": "<args:4>"
+      }
+    },
+    {
+      "module": "customModules.MountainRandomizer",
+      "config": {
+        "path": "<args:5>"
+      }
+    },
+    {
+      "module": "customModules.BuoyRandomizer",
+      "config": {
+        "buoys": 25,
+        "buoys_close": {
+          "provider": "sampler.Value",
+          "type": "int",
+          "min": 0,
+          "max": 5
+        },
+        "path": "<args:6>"
+      }
+    },
+    {
+      "module": "manipulators.EntityManipulator",
+      "config": {
+        "selector": {
+          "provider": "getter.Entity",
+          "conditions": {
+            "name": 'Boat.*',
+            "type": "MESH"
+          }
+        },
+        "location": {
+          "provider": "sampler.Uniform3d",
+          "max":[3000, 2500, 10],
+          "min":[-3000, -2850, 30]
+        },
+        "scale": [80,80,80]
+      }
+    },
+    {
+      "module": "manipulators.EntityManipulator",
+      "config": {
+        "selector": {
+          "provider": "getter.Entity",
+          "conditions": {
+            "name": 'Boat_close.*',
+            "type": "MESH"
+          }
+        },
+        "location": {
+          "provider": "sampler.Uniform3d",
+          "max":[650, -2000, 30],
+          "min":[-650, -2850, 10]
+        },
+        "scale": [80,80,80]
+      }
+    },
+    {
+      "module": "manipulators.EntityManipulator",
+      "config": {
+        "selector": {
+          "provider": "getter.Entity",
+          "conditions": {
+            "name": 'Mountain.*',
+            "type": "MESH"
+          }
+        },
+        "location": {
+          "provider": "sampler.Uniform3d",
+          "max":[5500, 3000, -100],
+          "min":[-5500, 3000, -300]
+        },
+        "scale": {
+          "provider": "sampler.Same3d",
+          "max": 2000,
+          "min": 1000
+        }
+      }
+    },
+    {
+      "module": "manipulators.EntityManipulator",
+      "config": {
+        "selector": {
+          "provider": "getter.Entity",
+          "conditions": {
+            "name": 'Buoy.*',
+            "type": "MESH"
+          }
+        },
+        "location": {
+          "provider": "sampler.Uniform3d",
+          "max":[3000, 2500, 8],
+          "min":[-3000, -2850, 0]
+        },
+        "scale": [20,20,20]
+      }
+    },
+    {
+      "module": "manipulators.EntityManipulator",
+      "config": {
+        "selector": {
+          "provider": "getter.Entity",
+          "conditions": {
+            "name": 'Buoy_close.*',
+            "type": "MESH"
+          }
+        },
+        "location": {
+          "provider": "sampler.Uniform3d",
+          "max":[650, -2000, 8],
+          "min":[-650, -2850, 0]
+        },
+        "scale": [20,20,20]
+      }
+    },
+    {
+      "module": "manipulators.WorldManipulator",
+      "config": {
+        "cf_set_world_category_id": 0  # this sets the worlds background category id to 0
+      }
+    },
+    {
+      "module": "customModules.OceanModule",
+      "config": {
+        "ocean": "OceanA"
+      }
+    },
+    {
+      "module": "renderer.RgbRenderer",
+      "config": {
+        "output_key": "colors",
+        "output_is_temp": False,
+        "simplify_subdivision_render": 0
+      }
+    },
+    {
+      "module": "renderer.SegMapRenderer",
+      "config": {
+        "map_by": ["class"],
+        "default_values": {"class": 2},
+        "output_is_temp": False,
+        "use_alpha": True
+      }
+    },
+    {
+      "module": "customModules.SegToPngModule",
+      "config":{
+        "path": "<args:2>",
+        "startFrame": 1,
+        "endFrame": 2
+      }
+    }
+  ]
+}
