@@ -17,7 +17,7 @@ Za uporabo simulacijskega okolja je potrebno narediti naslednje stvari.
 
 V config.yaml datoteki, ki se nahaja pod *ocean/OceanA* ali *ocean/OceanB* je potrebno dodati pot do programa Blender.
 
-   ![image](https://user-images.githubusercontent.com/47794629/131578181-435ba5b4-118f-4888-bbab-9d498b5d5653.png)
+![image](https://user-images.githubusercontent.com/47794629/131579565-396031da-42cd-4df1-a6a2-f80b3c5a4656.png)
     
 ### 2. Izrezane ovire
 Primeri slik iz COCO zbirke so pod *images/*, če pa želite dostopati do celotne zbirke pa je potrebno naložiti 
@@ -28,30 +28,30 @@ Primeri slik iz COCO zbirke so pod *images/*, če pa želite dostopati do celotn
 
    Pridobljene slike je potrebno unzipati in prestaviti v mapi *resources/COCO_train* in *resources/COCO_val*. Naložene anotacije je ravno tako potrebno unzipati vendar v mapo       *resources/annotations*. Izrezane slike se pridobi s skripto get_segmented_pics.py v mapi */scripts*. Z argumentoma lahko povemo kateri objekt želimo in pa katere anotacije         bomo uporabili. Nastala mapa bo enaka kot **object_type** v */resources/**object_type***.
     
-   Primer ukaza:
+Primer ukaza:
     
-    ```
-    python get_segmented_pics.py --object_type boat --annotation_type lvis_v1_train
-    ```
+ ```
+ python get_segmented_pics.py --object_type boat --annotation_type lvis_v1_train
+ ```
 ### 3. Haven nebo
 V mapi *resources/Haven/hdris* je primer Haven .hdr datoteke neba. Če želimo pridobiti več Haven datotek uporabimo skripto **download_haven.py** v mapi */scripts*
 
-   Primer uporabe:
+Primer uporabe:
   
-   ```
-   python download_haven.py --types hdris --categories skies --resolution 4k
-   ```
+```
+python download_haven.py --types hdris --categories skies --resolution 4k
+```
 ### 4. Postopek generiranja
 Generiranje oceana lahko poženemo na dva načina:
     
-   a) S skripto *run.py*
+a) S skripto *run.py*
    
-   ```
-   python run.py ocean/OceanA/config.yaml ocean/OceanA/camera_position ocean/OceanA/OceanA.blend outputs/Output0 resources\Haven\ resources/boats resources/mountains resources/buoys
-   ```
-  ali
+```
+python run.py ocean/OceanA/config.yaml ocean/OceanA/camera_position ocean/OceanA/OceanA.blend outputs/Output0 resources\Haven\ resources/boats resources/mountains resources/buoys
+```
+ali
   
-  b) S skripto *run_multiple_times.py*
+b) S skripto *run_multiple_times.py*
     
    #### Argumenti
 * `config_file` - <i>pot do config.yaml datoteke</i>
@@ -65,11 +65,11 @@ Generiranje oceana lahko poženemo na dva načina:
 * `starting_output` - <i>število s katero naj se začne generiranje podatkov</i> 
 * `number_of_outputs` - <i>število koliko slik naj se generira</i>
 
-    Primer uporabe skripte s privzetimi nastavitvami:
+ Primer uporabe skripte s privzetimi nastavitvami:
     
-    ```
-    python run_multiple_times.py 
-    ```
+ ```
+ python run_multiple_times.py 
+ ```
 ### 5. Razne skripte
 Ko imamo generirano zbirko s skripto **move_outputs_to_images.py** premaknemo vse outpute v isti folder in sicer v *images/*. Ko imamo slike v *images/* lahko naredimo prenos barv s skripto **transferColors.m**, spremenimo segmentacijske slike, da so pripravljene za treniranje mreže WaSR s skripto **seg_to_my_seg.py**. Za treniranje potrebujemo tudi train.txt datoteko z vsebino zbirke, ki jo lahko naredimo z skripto **create_train_text.py**.
 
