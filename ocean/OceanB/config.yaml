@@ -2,7 +2,7 @@
 {
   "version": 3,
   "setup": {
-    "blender_install_path": "/home_local/<env:USER>/blender/"
+    "blender_install_path": ""
   },
   "modules": [
     {
@@ -165,7 +165,7 @@
     {
       "module": "manipulators.WorldManipulator",
       "config": {
-        "cf_set_world_category_id": 0  # this sets the worlds background category id to 0
+        "cf_set_world_category_id": 0
       }
     },
     {
