@@ -2,9 +2,9 @@ import os
 from shutil import copyfile
 
 path = "../outputs"
-imgPath = "../images"
+imgPath = "../../images"
 
-os.chdir(path)
+# os.chdir(path)
 start = 0
 
 for output in os.listdir(path):
@@ -20,6 +20,7 @@ for i,output in enumerate(os.listdir(path)):
         os.chdir(path + '/' + output)
         for img in os.listdir(os.getcwd()):
             if len(os.listdir(os.getcwd())) > 1:
+                print(os.getcwd())
                 if 'rgb' in img:
                     copyfile(img, imgPath + '/' + output + 'image.png')
                 else:
