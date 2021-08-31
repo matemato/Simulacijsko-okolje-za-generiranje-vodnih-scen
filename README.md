@@ -84,7 +84,7 @@ Generirane slike             |  Segmentacijske slike
 # 4. Reference
 
 [1] Bovcon et. al, The MaSTr1325 Dataset for Training Deep USV Obstacle Detection Models, IROS 2019 <br>
-[2] COCO zbirka in anotacije https://github.com/nightrome/cocostuff#downloads <br>
+[2] COCO zbirka in anotacije https://github.com/nightrome/cocostuff <br>
 [3] LVIS anotacije https://www.lvisdataset.org/dataset <br>
 [4] BlenderProc https://github.com/DLR-RM/BlenderProc <br>
 [5] Haven HDRIs https://polyhaven.com/hdris
