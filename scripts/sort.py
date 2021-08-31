@@ -1,7 +1,7 @@
 import random
 
-f = open("C:/Users/matemato/Desktop/train.txt", "r")
-fi = open("C:/Users/matemato/Desktop/train2.txt", "a")
+f = open("../images/train.txt", "r")
+fi = open("../images/train2.txt", "r")
 a = []
 b = []
 n = 0
