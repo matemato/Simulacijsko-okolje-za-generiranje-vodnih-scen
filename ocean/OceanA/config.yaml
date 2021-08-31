@@ -2,8 +2,7 @@
 {
   "version": 3,
   "setup": {
-    # "blender_install_path": "/home_local/<env:USER>/blender/"
-    "blender_install_path": "D:/Program Files/Blender"
+    "blender_install_path": ""
   },
   "modules": [
     {

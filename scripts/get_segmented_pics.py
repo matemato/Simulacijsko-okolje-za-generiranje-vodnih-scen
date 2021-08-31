@@ -7,7 +7,7 @@ import argparse
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--object_type', help="Which object to segment.", default="boat")
-parser.add_argument('--annotation_type', nargs='+', help="Which annotation type.", default=["lvis_val"], choices=["lvis_val", "lvis_train" "coco_val", "coco_train"])
+parser.add_argument('--annotation_type', nargs='+', help="Which annotation type.", default=["lvis_val"], choices=["lvis_v1_val", "lvis_v1_train" "stuff_val2017", "stuff_train2017"])
 args = parser.parse_args()
 
 output_path = f'../resources/{args.object_type}s'
