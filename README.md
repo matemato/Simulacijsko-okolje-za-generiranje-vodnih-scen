@@ -11,7 +11,7 @@ Ves projekt je bil narejen z naslednjimi zahtevami:
 
 ## 2. Uporaba:
 
-Za uporabo simulacijskega okolja je potrebno narediti naslednje stvari.
+Za uporabo simulacijskega okolja je poleg kloniranja repozitorija, potrebno narediti naslednje stvari:
 
 ### a) Blender pot
 
