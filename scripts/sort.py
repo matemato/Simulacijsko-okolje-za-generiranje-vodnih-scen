@@ -1,7 +1,7 @@
 import random
 
 f = open("../images/train.txt", "r")
-fi = open("../images/train2.txt", "r")
+fi = open("../images/train2.txt", "w")
 a = []
 b = []
 n = 0
