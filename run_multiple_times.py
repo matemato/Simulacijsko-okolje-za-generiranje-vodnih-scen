@@ -1,6 +1,6 @@
+import argparse
 import os
 import sys
-import argparse
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--config_file', help="Path to config.yaml.", default="ocean/OceanA/config.yaml")
@@ -15,6 +15,8 @@ parser.add_argument('--starting_output', help="Number of the starting output.", 
 parser.add_argument('--number_of_outputs', help="Number of total outputs.", default=1)
 args = parser.parse_args()
 
+# Args: <output_dir> <blend_file> <haven_dir> <cam_file> <boat_dir> <mountain_dir> <buoy_dir>
+
 for i in range(args.number_of_outputs):
     output = 'Output' + str(args.starting_output+i)
-    os.system(f'cmd /c run.py {args.config_file} {args.cam_file} {args.blend_file} {args.output_path}/{output} {args.haven_dir} {args.boat_dir} {args.mountain_dir} {args.buoy_dir}')
+    os.system(f'cmd /c run.py {args.config_file} {args.output_path}/{output} {args.blend_file} {args.haven_dir} {args.cam_file} {args.boat_dir} {args.mountain_dir} {args.buoy_dir}')

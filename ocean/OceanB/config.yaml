@@ -1,4 +1,4 @@
-# Args: <cam_file> <blend_file> <output_dir> <haven_dir> <boat_dir> <mountain_dir> <buoy_dir>
+# Args: <output_dir> <blend_file> <haven_dir> <cam_file> <boat_dir> <mountain_dir> <buoy_dir>
 {
   "version": 3,
   "setup": {
@@ -9,7 +9,7 @@
       "module": "main.Initializer",
       "config":{
         "global": {
-          "output_dir": "<args:2>"
+          "output_dir": "<args:0>"
         }
       }
     },
@@ -22,13 +22,13 @@
     {
       "module": "loader.HavenEnvironmentLoader",
       "config": {
-         "data_path": "<args:3>"
+         "data_path": "<args:2>"
       }
     },
     {
       "module": "camera.CameraLoader",
       "config": {
-        "path": "<args:0>",
+        "path": "<args:3>",
         "file_format": "location rotation/value",
         "intrinsics": {
           "fov": 1.248,
@@ -194,7 +194,7 @@
     {
       "module": "customModules.SegToPngModule",
       "config":{
-        "path": "<args:2>",
+        "path": "<args:0>",
         "startFrame": 1,
         "endFrame": 2
       }
