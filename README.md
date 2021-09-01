@@ -11,7 +11,7 @@ Ves projekt je bil narejen z naslednjimi zahtevami:
 
 ## 2. Uporaba:
 
-Za uporabo simulacijskega okolja je potrebno narediti naslednje stvari.
+Za uporabo simulacijskega okolja je poleg kloniranja repozitorija, potrebno narediti naslednje stvari:
 
 ### a) Blender pot
 
@@ -26,7 +26,7 @@ Primeri slik iz COCO zbirke so pod *images/*, če pa želite dostopati do celotn
 - anotacije hribov in gora http://calvin.inf.ed.ac.uk/wp-content/uploads/data/cocostuffdataset/stuff_trainval2017.zip
 - anotacije čolnov in boj https://s3-us-west-2.amazonaws.com/dl.fbaipublicfiles.com/LVIS/lvis_v1_train.json.zip in https://s3-us-west-2.amazonaws.com/dl.fbaipublicfiles.com/LVIS/lvis_v1_val.json.zip
 
-   Pridobljene slike je potrebno unzipati in prestaviti v mapi *resources/COCO_train* in *resources/COCO_val*. Naložene anotacije je ravno tako potrebno unzipati vendar v mapo       *resources/annotations*. Izrezane slike se pridobi s skripto get_segmented_pics.py v mapi */scripts*. Z argumentoma lahko povemo kateri objekt želimo in pa katere anotacije         bomo uporabili. Nastala mapa bo enaka kot **object_type** v */resources/**object_type***.
+Pridobljene slike je potrebno unzipati in prestaviti v mapi *resources/COCO_train* in *resources/COCO_val*. Naložene anotacije je ravno tako potrebno unzipati vendar v mapo       *resources/annotations*. Izrezane slike se pridobi s skripto get_segmented_pics.py v mapi */scripts*. Z argumentoma lahko povemo kateri objekt želimo in pa katere anotacije         bomo uporabili. Nastala mapa bo enaka kot **object_type** v */resources/**object_type***.
     
 Primer ukaza:
     
@@ -87,4 +87,7 @@ Generirane slike             |  Segmentacijske slike
 [2] COCO zbirka in anotacije https://github.com/nightrome/cocostuff <br>
 [3] LVIS anotacije https://www.lvisdataset.org/dataset <br>
 [4] BlenderProc https://github.com/DLR-RM/BlenderProc <br>
-[5] Haven HDRIs https://polyhaven.com/hdris
+[5] Haven HDRIs https://polyhaven.com/hdris <br>
+[6] Color transfer between images https://www.mathworks.com/matlabcentral/fileexchange/63256-color-transfer-between-images <br>
+[7] Navdih za ocean A: https://www.youtube.com/watch?v=CwJrb3vjAaA&t=216s <br>
+[8] Navdih za ocean B: https://www.youtube.com/watch?v=nOdNUFPbBJM
