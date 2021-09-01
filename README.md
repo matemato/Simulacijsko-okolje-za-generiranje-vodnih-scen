@@ -47,7 +47,7 @@ Generiranje oceana lahko poženemo na dva načina:
 i) S skripto *run.py*
    
 ```
-python run.py ocean/OceanA/config.yaml outputs/Output0 ocean/OceanA/OceanA.blend resources/Haven ocean/OceanA/camera_position resources/boats resources/mountains resources/buoys
+python run.py ocean/OceanA/config.yaml outputs/Output0 ocean/OceanA/OceanA.blend ocean/OceanA/camera_position resources/boats resources/mountains resources/buoys resources/Haven
 ```
 ali
   
