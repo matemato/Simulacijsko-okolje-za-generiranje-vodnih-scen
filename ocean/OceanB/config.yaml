@@ -1,8 +1,8 @@
-# Args: <output_dir> <blend_file> <haven_dir> <cam_file> <boat_dir> <mountain_dir> <buoy_dir>
+# Args: <output_dir> <blend_file> <cam_file> <boat_dir> <mountain_dir> <buoy_dir> <haven_dir>
 {
   "version": 3,
   "setup": {
-    "blender_install_path": ""
+    "blender_install_path": "D:/Program Files/Blender"
   },
   "modules": [
     {
@@ -20,20 +20,20 @@
       }
     },
     {
-      "module": "loader.HavenEnvironmentLoader",
-      "config": {
-         "data_path": "<args:2>"
-      }
-    },
-    {
       "module": "camera.CameraLoader",
       "config": {
-        "path": "<args:3>",
+        "path": "<args:2>",
         "file_format": "location rotation/value",
         "intrinsics": {
           "fov": 1.248,
           "clip_end": 200000
         }
+      }
+    },
+    {
+      "module": "customModules.OceanModule",
+      "config": {
+        "ocean": "OceanB"
       }
     },   
     {
@@ -46,13 +46,13 @@
           "min": 1,
           "max": 5
         },
-        "path": "<args:4>"
+        "path": "<args:3>"
       }
     },
     {
       "module": "customModules.MountainRandomizer",
       "config": {
-        "path": "<args:5>"
+        "path": "<args:4>"
       }
     },
     {
@@ -65,7 +65,7 @@
           "min": 0,
           "max": 5
         },
-        "path": "<args:6>"
+        "path": "<args:5>"
       }
     },
     {
@@ -163,15 +163,15 @@
       }
     },
     {
-      "module": "manipulators.WorldManipulator",
+      "module": "loader.HavenEnvironmentLoader",
       "config": {
-        "cf_set_world_category_id": 0
+         "data_path": "<args:6>"
       }
     },
     {
-      "module": "customModules.OceanModule",
+      "module": "manipulators.WorldManipulator",
       "config": {
-        "ocean": "OceanB"
+        "cf_set_world_category_id": 0
       }
     },
     {
