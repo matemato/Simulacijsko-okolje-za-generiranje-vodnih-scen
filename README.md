@@ -88,3 +88,6 @@ Generirane slike             |  Segmentacijske slike
 [3] LVIS anotacije https://www.lvisdataset.org/dataset <br>
 [4] BlenderProc https://github.com/DLR-RM/BlenderProc <br>
 [5] Haven HDRIs https://polyhaven.com/hdris
+[6] Color transfer between images https://www.mathworks.com/matlabcentral/fileexchange/63256-color-transfer-between-images
+[7] Navdih za ocean A: https://www.youtube.com/watch?v=CwJrb3vjAaA&t=216s
+[8] Navdih za ocean B: https://www.youtube.com/watch?v=nOdNUFPbBJM
