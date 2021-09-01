@@ -177,7 +177,6 @@
     {
       "module": "renderer.RgbRenderer",
       "config": {
-        "output_key": "colors",
         "output_is_temp": False,
         "simplify_subdivision_render": 0
       }
@@ -194,9 +193,7 @@
     {
       "module": "customModules.SegToPngModule",
       "config":{
-        "path": "<args:0>",
-        "startFrame": 1,
-        "endFrame": 2
+        "path": "<args:0>"
       }
     }
   ]
