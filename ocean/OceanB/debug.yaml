@@ -1,0 +1,74 @@
+# Args: <output_dir> <blend_file> <cam_file> <boat_dir> <mountain_dir> <buoy_dir> <haven_dir>
+{
+  "version": 3,
+  "setup": {
+    "blender_install_path": "D:/Program Files/Blender"
+  },
+  "modules": [
+    {
+      "module": "main.Initializer",
+      "config":{
+        "global": {
+          "output_dir": "<args:0>"
+        }
+      }
+    },
+    {
+      "module": "loader.BlendLoader",
+      "config": {
+        "path": "<args:1>"
+      }
+    },
+    {
+      "module": "camera.CameraLoader",
+      "config": {
+        "path": "<args:2>",
+        "file_format": "location rotation/value",
+        "intrinsics": {
+          # "fov": 1.248,
+          "clip_end": 200000
+        }
+      }
+    },
+    {
+      "module": "customModules.OceanModule",
+      "config": {
+        "ocean": "OceanB"
+      }
+    },   
+    {
+      "module": "loader.HavenEnvironmentLoader",
+      "config": {
+         "data_path": "<args:6>"
+      }
+    },
+    {
+      "module": "manipulators.WorldManipulator",
+      "config": {
+        "cf_set_world_category_id": 0
+      }
+    },
+    {
+      "module": "renderer.RgbRenderer",
+      "config": {
+        "output_is_temp": False,
+        "simplify_subdivision_render": 0
+      }
+    },
+    {
+      "module": "renderer.SegMapRenderer",
+      "config": {
+        "map_by": ["class"],
+        "default_values": {"class": 2},
+        "output_is_temp": False,
+        "use_alpha": True
+      }
+    },
+    {
+      "module": "customModules.SegToPngModule",
+      "config":{
+        "path": "<args:0>"
+      }
+    }
+  ]
+}

@@ -3,9 +3,9 @@ import os
 import sys
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--config_file', help="Path to config.yaml.", default="ocean/OceanA/config.yaml")
-parser.add_argument('--cam_file', help="Path to camera positions.", default="ocean/OceanA/camera_position")
-parser.add_argument('--blend_file', help="Path to .blend file.", default="ocean/OceanA/OceanA.blend")
+parser.add_argument('--config_file', help="Path to config.yaml.", default="ocean/OceanB/debug.yaml")
+parser.add_argument('--cam_file', help="Path to camera positions.", default="ocean/OceanB/camera_position")
+parser.add_argument('--blend_file', help="Path to .blend file.", default="ocean/OceanB/OceanB.blend")
 parser.add_argument('--output_path', help="Path to output directory.", default="outputs")
 parser.add_argument('--haven_dir', help="Path to Haven directory.", default="resources/Haven")
 parser.add_argument('--boat_dir', help="Path to boat directory.", default="resources/boats")

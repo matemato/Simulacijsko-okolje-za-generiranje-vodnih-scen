@@ -51,6 +51,7 @@ class OceanModule(Module):
         ocean.modifiers["Ocean"].random_seed = random.randint(0, 999999999)
         wave_scale = np.random.normal(1.6, 0.7)
         wave_scale = max(0.2, wave_scale)
+        wave_scale = min(wave_scale, 3)
         ocean.modifiers["Ocean"].wave_scale = wave_scale
         ocean.modifiers["Ocean"].wave_direction = random.uniform(0, 2*pi)
         ocean.modifiers["Ocean"].wave_alignment = random.uniform(0, 1)
@@ -142,8 +143,8 @@ class OceanModule(Module):
         links.new(texture_coordinates.outputs["Generated"], mapping.inputs["Vector"])
         links.new(mapping.outputs["Vector"], texture_node.inputs["Vector"])
       
-        mapping.inputs[1].default_value[2] = 1.2 # moves the sky down, so it doesn't show hills, mountains...
-        mapping.inputs[2].default_value[2] = random.uniform(0, pi*2)
+        mapping.inputs[2].default_value[0] = 0.43633 # 0.872664626
+        mapping.inputs[2].default_value[2] = 4.22369 # random.uniform(0, pi*2)
         background.inputs[1].default_value = 5 #random.uniform(1, 5)
 
     # sets starting and ending frame
